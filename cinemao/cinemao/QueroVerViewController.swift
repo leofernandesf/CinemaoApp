@@ -45,7 +45,8 @@ class QueroVerViewController: UIViewController {
     
     func deletCell(index: IndexPath) {
         itens.remove(at: index.row)
-        myTable.deleteRows(at: [index], with: .left)
+        //myTable.deleteRows(at: [index], with: .automatic)
+        self.myTable.reloadData()
     }
     
 
@@ -120,10 +121,12 @@ extension QueroVerViewController : MGSwipeTableCellDelegate {
             let blankButton = MGSwipeButton(title: "", backgroundColor: UIColor.clear)
             
             
-            swipeSettings.transition = .static
+            swipeSettings.transition = .border
             swipeSettings.enableSwipeBounces = true
             
             expansionSettings.buttonIndex = 0
+            expansionSettings.animationDuration = 0
+            expansionSettings.fillOnTrigger = true
             
             return [ deleteButton, blankButton, blankButton, blankButton ]
         default:
