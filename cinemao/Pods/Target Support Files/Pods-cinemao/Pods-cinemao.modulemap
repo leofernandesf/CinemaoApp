@@ -1,0 +1,6 @@
+framework module Pods_cinemao {
+  umbrella header "Pods-cinemao-umbrella.h"
+
+  export *
+  module * { export * }
+}
