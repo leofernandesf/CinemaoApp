@@ -130,7 +130,7 @@ extension QueroVerViewController : MGSwipeTableCellDelegate {
             
             return [ deleteButton, blankButton, blankButton, blankButton ]
         default:
-            return [MGSwipeButton()]
+            return nil
             
         }
     }
